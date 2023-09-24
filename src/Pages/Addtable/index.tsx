@@ -3,8 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { Card } from "../../components";
-import { Button, Form, Input, Select, } from "antd";
+import { Button, Form, Input, Select, Space, } from "antd";
 import useCheckLogin from "../../Hooks/UseCheckLogin";
+import "./addtable.css"
 
 interface Addtables {
     name: string;
@@ -53,7 +54,7 @@ const Addtable: React.FC = () => {
     return (
         <>
             <Card>
-                <h1 className="text-center">Add New Data</h1>
+                <h2 className="text-center">Add New Data</h2>
                 <Form name="basic" autoComplete="off" justify-content="center" onFinish={formik.handleSubmit}>
                     <Form.Item
                         name="name"
@@ -66,7 +67,7 @@ const Addtable: React.FC = () => {
                             placeholder="Your Name"
                             value={formik.values.name}
                             onChange={formik.handleChange('name')}
-                        status={formik.errors.name && 'error'}
+                            status={formik.errors.name && 'error'}
                         />
                     </Form.Item>
                     <Form.Item name="is_active"
@@ -83,10 +84,12 @@ const Addtable: React.FC = () => {
                     </Form.Item>
 
                     <div>
-                        <br></br>
-                        <Button type="primary" htmlType="submit">Add New</Button>
-                        <br></br>
-                        <Button type="primary" onClick={() => navigate('/home')}>Back</Button>
+                        <Space>
+                            <br></br>
+                            <Button type="primary" htmlType="submit">Add New</Button>
+                            <br></br>
+                            <Button type="primary" onClick={() => navigate('/home')}>Back</Button>
+                        </Space>
                     </div>
                 </Form>
 

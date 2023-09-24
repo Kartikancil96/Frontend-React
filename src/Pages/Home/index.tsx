@@ -97,7 +97,7 @@ const Home: React.FC = () => {
 
     return (
 
-        <Table columns={columns} dataSource={dataList} />
+        <Table style={{ marginTop: 20 }} columns={columns} dataSource={dataList} />
 
     )
 }

@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "../../components";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, Space } from "antd";
 import useCheckLogin from "../../Hooks/UseCheckLogin";
 
 interface Edittables {
@@ -51,7 +51,7 @@ const Edittable: React.FC = () => {
   return (
     <>
       <Card>
-        <h1 className="text-center">Edit Data Form</h1>
+        <h2 className="text-center">Edit Data Form</h2>
         <Form name="basic" autoComplete="off" justify-content="center" onFinish={formik.handleSubmit}>
           <Form.Item
             name="name"
@@ -81,10 +81,11 @@ const Edittable: React.FC = () => {
           </Form.Item>
 
           <div>
-            <br></br>
-            <Button type="primary" htmlType="submit">Edit Data</Button>
-            <br></br>
-            <Button type="primary" onClick={() => navigate('/home')}>Back</Button>
+            <Space>
+              <Button type="primary" htmlType="submit">Edit Data</Button>
+              <br></br>
+              <Button type="primary" onClick={() => navigate('/home')}>Back</Button>
+            </Space>
           </div>
         </Form>
 

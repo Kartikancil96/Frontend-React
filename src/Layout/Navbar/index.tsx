@@ -44,7 +44,9 @@ const Navbar: React.FC = () => {
     },
   ];
 
-  return <Menu onClick={onNavbar} selectedKeys={[current]} mode="horizontal" items={items} />;
+  return <header>
+    <Menu style={{justifyContent:'center'}} onClick={onNavbar} selectedKeys={[current]} mode="horizontal" items={items} />
+  </header>;
 };
 
 

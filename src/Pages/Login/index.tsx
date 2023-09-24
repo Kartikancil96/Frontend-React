@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useNavigate, Link } from "react-router-dom";
 import { Card, Text } from "../../components";
 import { Button } from "antd";
+import './login.css'
 
 interface DataLoginValues {
     email: string;
