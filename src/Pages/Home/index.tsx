@@ -4,6 +4,7 @@ import { EditFilled, DeleteFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { ColumnsType } from "antd/es/table";
 import useCheckLogin from "../../Hooks/UseCheckLogin";
+import { Text } from "../../components";
 
 
 
@@ -96,9 +97,10 @@ const Home: React.FC = () => {
     ]
 
     return (
-
-        <Table style={{ marginTop: 20 }} columns={columns} dataSource={dataList} />
-
+        <>
+            <Text type="h2">List Data</Text>
+            <Table style={{ marginTop: 20 }} columns={columns} dataSource={dataList} />
+        </>
     )
 }
 
